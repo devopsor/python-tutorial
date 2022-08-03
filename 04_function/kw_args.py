@@ -29,3 +29,29 @@ def print_info(name, *, gender, city='Beijing', age):
 
 print_info('Bob', gender='male', age=20)
 print_info('Lisa', gender='female', city='Shanghai', age=18)
+
+#      Name  Score
+# ------------------
+#       Adam  99
+#       Lisa  88
+#       Bart  77
+
+#       Name  Score
+# ------------------
+#   Adam Lee  99
+#     Lisa S  88
+#     F.Bart  77
+
+# Personal Info
+# ---------------
+#    Name: Bob
+#  Gender: male
+#    City: Beijing
+#     Age: 20
+
+# Personal Info
+# ---------------
+#    Name: Lisa
+#  Gender: female
+#    City: Shanghai
+#     Age: 18
