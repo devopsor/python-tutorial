@@ -102,9 +102,9 @@ print('%02d-%2d' % (3, 1)) #03- 1
 print('%.2f' % 3.1415926) #3.14
 print('\n')
 
-print('Age: %s. Gender: %s' % (25, True))
-print( 'growth rate: %d%%' % 7)
-print( 'Hello, {0}, 成绩提升了 {1:.2f}%'.format('小明', 17.125))
+print('Age: %s. Gender: %s' % (25, True)) #Age: 25. Gender: True
+print( 'growth rate: %d%%' % 7) #growth rate: 7%
+print( 'Hello, {0}, 成绩提升了 {1:.2f}%'.format('小明', 17.125)) #Hello, 小明, 成绩提升了 17.12%
 print('\n')
 
 ###################################### f-string ######################################
