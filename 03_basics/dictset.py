@@ -46,3 +46,60 @@ print(dict.get('Bob', -1)) #-1
 dict['Bob'] = -1
 print(dict.get('Bob')) # -1
 print(dict.get('Bob', -1)) #-1, apparently, dict.get('Bob', -1) can not check whether item exist in list or not
+# Note: None Python's interactive environment does not display results when returning.
+print('\n')
+
+print(dict) #{'Adam': 67, 'Bob': -1}
+print(dict.pop('Bob')) #-1
+print(dict) #{'Adam': 67}
+print('\n')
+
+# Note that the incoming parameter [1, 2, 3] is a list, and the display {1, 2, 3} only tells you that there are 3 elements 1, 2, and 3 
+# inside the set, and the order of display does not mean that the set is ordered.
+# Duplicate elements are automatically filtered in the set:
+number = set([1, 1, 2, 2, 3, 3])
+print(number) #{1, 2, 3}
+number.add('4')
+print(number) #{'4', 1, 2, 3}
+print('\n')
+
+number.remove('4')
+print(number) #{1, 2, 3}
+print('\n')
+
+# add(key) Elements can be added to the set through methods, which can be added repeatedly, but have no effect:
+number.add(4)
+print(number) #{1, 2, 3, 4}
+print('\n')
+
+# remove(key) Elements can be removed by methods:
+number.remove(4)
+print(number) #{1, 2, 3}
+print('\n')
+
+# A set can be regarded as a collection of unordered and non-repetitive elements in a mathematical sense. 
+# Therefore, two sets can perform operations such as intersection and union in a mathematical sense:
+s1 =set([1, 2, 3])
+s2 = set([2, 3, 4])
+print(s1&s2) #{2, 3}
+print(s1|s2) #{1, 2, 3, 4}
+
+# The only difference between set and dict is that the corresponding value is not stored. 
+# However, the principle of set is the same as that of dict. Therefore, mutable objects cannot be placed, 
+# because it is impossible to judge whether two mutable objects are equal, and there is no guarantee of set. 
+# Inside "there will be no repeating elements". Try putting the list into the set and see if an error will be reported.
+
+###############################Revisiting Immutable Objects####################################
+# As we said above, str is an immutable object, and list is a mutable object.
+# For a mutable object, such as a list, when you operate on the list, the content inside the list will change, such as:
+a = ['c', 'b', 'a']
+print(a) #['c', 'b', 'a']
+a.sort()
+print(a) #['a', 'b', 'c']
+
+# And for immutable objects, such as str, what about str:
+a = 'abc'
+b = a.replace('a', 'A')
+print(a) #abc
+print(b) #Abc
+
