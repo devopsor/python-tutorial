@@ -1,6 +1,7 @@
 ###################################tuple########################################
 # Another type of ordered list is called a tuple.
-# Tuple and list are very similar, but once tuple is initialized, it cannot be modified. For example, it also lists the names of classmates:
+# Tuple and list are very similar, but once tuple is initialized, it cannot be modified. (※)
+# For example, it also lists the names of classmates:
 classmates = ('Michael', 'Bob', 'Tracy')
 print(classmates[1]) #Bob
 print(classmates) #('Michael', 'Bob', 'Tracy')
