@@ -74,3 +74,80 @@ produce(c)
 
 # "Subroutines are a special case of coroutines."
 
+#!/usr/bin/env python3
+# countasync.py
+
+import asyncio
+
+async def service(m):
+    print('START: ' + m )
+    await asyncio.sleep(1)  #time.sleep(1)
+    print('END: ' + m )
+
+async def main():
+    await asyncio.gather(
+        service('Hot Coffee'), 
+        service('ICE Coffee'), 
+        service('ICE Tea'), 
+        service('Hot Tea'), 
+        service('Cold Drinks')
+    )
+    ###########################vs synchronous
+    # service('Hot Coffee'), 
+    # service('ICE Coffee'), 
+    # service('ICE Tea'), 
+    # service('Hot Tea'), 
+    # service('Cold Drinks')
+    
+if __name__ == "__main__":
+    import time
+    s = time.perf_counter()
+    asyncio.run(main())  # vs main()
+    elapsed = time.perf_counter() - s
+    print(f"{__file__} executed in {elapsed:0.2f} seconds.")
+
+# START: Hot Coffee
+# START: ICE Coffee 
+# START: ICE Tea    
+# START: Hot Tea    
+# START: Cold Drinks
+# END: Hot Coffee
+# END: ICE Tea
+# END: Cold Drinks
+# END: ICE Coffee
+# END: Hot Tea
+print('\n')
+############################Contrast this to the synchronous version:##################
+#!/usr/bin/env python3
+# countsync.py
+
+import time
+
+def service(m):
+    print('START: ' + m )
+    time.sleep(1)
+    print('END: ' + m )
+
+def main():
+    service('Hot Coffee'), 
+    service('ICE Coffee'), 
+    service('ICE Tea'), 
+    service('Hot Tea'), 
+    service('Cold Drinks')
+
+if __name__ == "__main__":
+    s = time.perf_counter()
+    main()
+    elapsed = time.perf_counter() - s
+    print(f"{__file__} executed in {elapsed:0.2f} seconds.")
+
+# START: Hot Coffee
+# END: Hot Coffee
+# START: ICE Coffee
+# END: ICE Coffee
+# START: ICE Tea
+# END: ICE Tea
+# START: Hot Tea
+# END: Hot Tea
+# START: Cold Drinks
+# END: Cold Drinks
