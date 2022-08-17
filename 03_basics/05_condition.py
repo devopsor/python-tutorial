@@ -47,17 +47,3 @@ else:
     print('born after 2000') # born after 2000
 
 
-#############################Tips and Tricks#########################
-condition = False
-if condition:
-    x = 1
-else:
-    x=0
-print(x)
-
-###or
-x = 1 if condition else 0
-print(x)
-
-condition = True
-x = 1 if condition else 0
