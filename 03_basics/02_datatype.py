@@ -199,6 +199,17 @@ print ( 10 % 2) #0
 # Python integers have no size limit, while integers in some languages ​​are limited in size according to their storage lengt
 print(99999999999999999999)
 print(9999999999999999999_9)
+print('\n')
 
+#############################Tips and Tricks#########################
+num1 = 10000000000
+num2 = 100000000
+total = num1 + num2
+print(total)  #10100000000
 
-#
+num1 = 10_000_000_000
+num2 = 100_000_000
+total = num1 + num2
+print(total) #10100000000
+print(f'{total:,}')  #10,100,000,000
+print(f'{total:_}')  #10_100_000_000
